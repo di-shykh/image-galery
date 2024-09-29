@@ -24,7 +24,7 @@ body {
 header {
   height: 75px;
   padding: 20px;
-  border-bottom: 5xp solid orange;
+  border-bottom: 5px solid orange;
 }
 .header {
   display: flex;
@@ -35,6 +35,7 @@ header {
 }
 .search-container {
   position: relative;
+  align-items: center;
 }
 #search-input {
   width: 350px;
@@ -47,13 +48,16 @@ header {
 
 #search {
   position: absolute;
-  top: 25%;
+  top: 20%;
   right: 10%;
   color: black;
   width: 16px;
   height: 16px;
-  font-weight: normal;
   cursor: pointer;
+  transition: all 0.5s;
+}
+#search:hover {
+  color: orange;
 }
 .logo i {
   width: 2rem;
