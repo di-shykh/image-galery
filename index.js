@@ -1,5 +1,6 @@
 let url = "https://api.unsplash.com/search/photos?query=spring&per_page=30&orientation=landscape&extras=url_m&client_id=eTG7VANgoQMpa-GgtUa_3LLMy-bLBbsFWjgEGZUUymA";
-
+const searchInput = document.querySelector('#search-input');
+searchInput.focus();
 async function getData(url) {
   const res = await fetch(url);
   const data = await res.json();
@@ -16,7 +17,6 @@ function showImages(data) {
   });
 }
 
-const searchInput = document.querySelector('#search-input');
 document.getElementById("search").addEventListener('click', () => {
   url = `https://api.unsplash.com/search/photos?query=${searchInput.value}&per_page=30&orientation=landscape&extras=url_m&client_id=eTG7VANgoQMpa-GgtUa_3LLMy-bLBbsFWjgEGZUUymA`;
   clearImageContainer();
