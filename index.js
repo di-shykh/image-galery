@@ -21,6 +21,7 @@ document.getElementById("search").addEventListener('click', () => {
   url = `https://api.unsplash.com/search/photos?query=${searchInput.value}&per_page=30&orientation=landscape&extras=url_m&client_id=eTG7VANgoQMpa-GgtUa_3LLMy-bLBbsFWjgEGZUUymA`;
   clearImageContainer();
   getData(url);
+  document.getElementById("search").className = 'fa fa-times';
 });
 
 searchInput.addEventListener("keyup", function (event) {
@@ -29,8 +30,18 @@ searchInput.addEventListener("keyup", function (event) {
     url = `https://api.unsplash.com/search/photos?query=${searchInput.value}&per_page=30&orientation=landscape&extras=url_m&client_id=eTG7VANgoQMpa-GgtUa_3LLMy-bLBbsFWjgEGZUUymA`;
     clearImageContainer();
     getData(url);
+    document.getElementById("search").className = 'fa fa-times';
   }
-})
+});
+// const crossIcon = document.querySelector('.fa-times');
+// if (crossIcon) {
+//   crossIcon.addEventListener('click', () => {
+//     searchInput.value = '';
+//     console.log(searchInput);
+//     document.getElementById("search").className = 'fa fa-search';
+//   });
+// }
+
 
 function clearImageContainer() {
   const images = document.querySelectorAll('.image-container .container img');
