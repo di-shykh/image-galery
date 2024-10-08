@@ -18,7 +18,7 @@ function showImages(data) {
 }
 
 document.getElementById("search").addEventListener('click', () => {
-  url = `https://api.unsplash.com/search/photos?query=${searchInput.value}&per_page=30&orientation=landscape&extras=url_m&client_id=eTG7VANgoQMpa-GgtUa_3LLMy-bLBbsFWjgEGZUUymA`;
+  url = `https://api.unsplash.com/search/photos?query=${searchInput.value.trim()}&per_page=30&orientation=landscape&extras=url_m&client_id=eTG7VANgoQMpa-GgtUa_3LLMy-bLBbsFWjgEGZUUymA`;
   clearImageContainer();
   getData(url);
 });
@@ -26,7 +26,7 @@ document.getElementById("search").addEventListener('click', () => {
 searchInput.addEventListener("keyup", function (event) {
   event.preventDefault();
   if (event.keyCode === 13) {
-    url = `https://api.unsplash.com/search/photos?query=${searchInput.value}&per_page=30&orientation=landscape&extras=url_m&client_id=eTG7VANgoQMpa-GgtUa_3LLMy-bLBbsFWjgEGZUUymA`;
+    url = `https://api.unsplash.com/search/photos?query=${searchInput.value.trim()}&per_page=30&orientation=landscape&extras=url_m&client_id=eTG7VANgoQMpa-GgtUa_3LLMy-bLBbsFWjgEGZUUymA`;
     clearImageContainer();
     getData(url);
   }
